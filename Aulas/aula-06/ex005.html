@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Iniciando com DOM</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #5449f386;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Começando com DOM</h1>
+    <p>Mais uma aula legal</p>
+    <p>Primeira aula com DOM</p>
+    <p>Aprendendo a mexer no <strong>DOM</strong></p>
+    <div id="msg">
+        clique aqui
+    </div>
+
+    <script>
+        /* var p1 = window.document.getElementsByTagName('p')[2]
+        var d = document.getElementById('msg')
+        d.style.color= "lightgreen"
+        d.innerHTML = "Massa mudei o texto por <strong>JS</strong> ..."
+        p1.style.color = "gray"
+        window.document.write("<br>Esta assim: "+p1.innerHTML) */
+
+        var d = window.document.querySelector("div#msg")
+        d.innerHTML = "Olá, mundo!!"
+    </script>
 </body>
 </html>
