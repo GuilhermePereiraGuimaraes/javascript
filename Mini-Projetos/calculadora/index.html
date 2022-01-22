@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="shortcut icon" href="imagens/small-icone.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora Simples</h1>
+    </header>
+    <main>
+        <h1>Operações</h1>
+        <section>
+            <h1>Soma</h1>
+            <input type="number" name="txtn1" class="txtn1" placeholder="1° Número">
+            <input type="number" name="txtn2" class="txtn2" placeholder="2° Número">
+            <input type="button" value="Somar" onclick="somar()">
+            <p class="res">Resultado:</p>
+        </section>
+
+        <section>
+            <h1>Subtração</h1>
+            <input type="number" name="txtn1" class="txtn1" placeholder="1° Número">
+            <input type="number" name="txtn2" class="txtn2" placeholder="2° Número">
+            <input type="button" value="Subtrair" onclick="subtrair()">
+            <p class="res">Resultado:</p>
+        </section>
+
+        <section>
+            <h1>Multiplicação</h1>
+            <input type="number" name="txtn1" class="txtn1" placeholder="1° Número">
+            <input type="number" name="txtn2" class="txtn2" placeholder="2° Número">
+            <input type="button" value="Multiplicar" onclick="multiplicar()">
+            <p class="res">Resultado:</p>
+        </section>
+
+        <section>
+            <h1>Divisão</h1>
+            <input type="number" name="txtn1" class="txtn1" placeholder="1° Número">
+            <input type="number" name="txtn2" class="txtn2" placeholder="2° Número">
+            <input type="button" value="Dividir" onclick="dividir()">
+            <p class="res">Resultado:</p>
+        </section>
+    </main>
+    <footer>
+        <p>Site feito por <a href="https://github.com/GuilhermePereiraGuimaraes" target="_blank" rel="external"><strong>Guilherme Pereira</strong></a></p>
+    </footer>
+    
+    <script>
+        function somar(){
+            var num1 = window.document.getElementsByClassName("txtn1")[0]
+            var num2 = window.document.getElementsByClassName("txtn2")[0]
+            var valor1 = Number(num1.value)
+            var valor2 = Number(num2.value)
+            var soma = valor1+valor2 
+            var res = window.document.getElementsByClassName("res")[0]
+            res.innerHTML=`Resultado: <strong>${soma}</strong>`
+        }
+        function subtrair(){
+            var num1 = window.document.getElementsByClassName("txtn1")[1]
+            var num2 = window.document.getElementsByClassName("txtn2")[1]
+            var valor1 = Number(num1.value)
+            var valor2 = Number(num2.value)
+            var sub = valor1-valor2 
+            var res = window.document.getElementsByClassName("res")[1]
+            res.innerHTML=`Resultado: <strong>${sub}</strong>`
+        }
+        function multiplicar(){
+            var num1 = window.document.getElementsByClassName("txtn1")[2]
+            var num2 = window.document.getElementsByClassName("txtn2")[2]
+            var valor1 = Number(num1.value)
+            var valor2 = Number(num2.value)
+            var mult = valor1*valor2
+            var res = window.document.getElementsByClassName("res")[2]
+            res.innerHTML=`Resultado: <strong>${mult}</strong>`
+        }
+        function dividir(){
+            var num1 = window.document.getElementsByClassName("txtn1")[3]
+            var num2 = window.document.getElementsByClassName("txtn2")[3]
+            var valor1 = Number(num1.value)
+            var valor2 = Number(num2.value)
+            var divi = valor1/valor2
+            var res = window.document.getElementsByClassName("res")[3]
+            res.innerHTML= `Resultado: <strong>${divi}</strong>`
+        }
+    </script>
+</body>
+</html>
