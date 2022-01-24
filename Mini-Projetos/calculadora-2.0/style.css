@@ -11,39 +11,83 @@ h1{
     text-align: center;
 }
 main{
-    width: 600px;
+    position: relative;
+    width: 300px;
+    height: 350px;
     margin: auto;
     text-align: center;
-    background-color: lightgray;
+    background-color: #000000b4;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
+    box-shadow: inset -8px -6px 4px 0px #0000009d;
 }
 main input{
     padding: 10px;
     font-size: 1.3em;
+    position: relative;
 }
 input#txtexp{
-    text-align: center;
+    text-align: right;
     display: inline-block;
-    width: 400px;
+    width: 270px;
     margin-bottom: 10px;
+    background-color: #8acc2788;
+    color: rgba(0, 0, 0, 0.603);
+    font-weight: bold;
+    height: 30px;
 }
 input.botao{
-    font-weight: bold;
+    font-weight: normal;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 6px;
     border: 1px solid #0000008f;
-    box-shadow: 1px 1px 1.5px #00000062;
-}
-input.botao:hover{
-    background-color: gray;
-    color: white;
-    border-style: solid;
-}
-p#problema{
-    margin-top: 10px;
-    padding: 10px;
+    box-shadow: inset -3px -4px 4px 0px #0000009d;
     text-align: center;
-    color: red;
-    font-weight: bold;
+    background-color: #0000006e;
+    color: white;
+    width: 50px;
 }
+input.botao:active{
+    box-shadow: 0px 0px 0px 0px #00000062;
+}
+input#c{
+    width: 130px;
+    background-color: red;
+}
+div.outros{
+    position: absolute;
+    display: inline;
+    width: 400px;
+    top: 21%;
+    right: -3%;
+}
+div.outros>input{
+    height: 55px;
+}
+div.num{
+    position: absolute;
+    display: inline;
+    width: 250px;
+    height: 200px;
+    top: 37%;
+    right: 21%
+}
+div.num>input{
+    width: 77px;
+}
+input#igualdade{
+    background-color: #50c9f1be;
+    width: 158px; 
+}
+div.op{
+    position: absolute;
+    display: inline;
+    width: 50px;
+    height: 200px;
+    top: 21%;
+    right: 5%;
+}
+div.op>input{
+    height: 60px;
+}
+

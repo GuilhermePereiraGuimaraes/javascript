@@ -10,26 +10,34 @@
 <body>
     <h1>Calculadora 2.0</h1>
     <main>
-        <input type="text" name="txtexp" id="txtexp" placeholder="Expressão"> <p></p> 
-        <input type="button" value="0" onclick="botao(0)" class="botao">
-        <input type="button" value="1" onclick="botao(1)" class="botao">
-        <input type="button" value="2" onclick="botao(2)" class="botao">
-        <input type="button" value="3" onclick="botao(3)" class="botao">
-        <input type="button" value="4" onclick="botao(4)" class="botao">
-        <input type="button" value="5" onclick="botao(5)" class="botao">
-        <input type="button" value="6" onclick="botao(6)" class="botao">
-        <input type="button" value="7" onclick="botao(7)" class="botao">
-        <input type="button" value="8" onclick="botao(8)" class="botao">
-        <input type="button" value="9" onclick="botao(9)" class="botao">  <p></p>
-        <input type="button" value="+" onclick="botao('+')" class="botao">
-        <input type="button" value="-" onclick="botao('-')" class="botao">
-        <input type="button" value="x" onclick="botao('*')" class="botao">
-        <input type="button" value="/" onclick="botao('/')" class="botao">
-        <input type="button" value="(" onclick="botao('(')" class="botao">
-        <input type="button" value=")" onclick="botao(')')" class="botao">
-        <input type="button" value="=" onclick="resolução()" class="botao">
+        <input type="text" name="txtexp" id="txtexp"> 
+        <div>
+            <div class="outros">
+                <input type="button" value="C" onclick="c_botao()" class="botao" id="c">
+                <input type="button" value="(" onclick="botao('(')" class="botao">
+                <input type="button" value=")" onclick="botao(')')" class="botao">
+            </div>
+            <div class="num">
+                <input type="button" value="0" onclick="botao(0)" class="botao">
+                <input type="button" value="1" onclick="botao(1)" class="botao">
+                <input type="button" value="2" onclick="botao(2)" class="botao">
+                <input type="button" value="3" onclick="botao(3)" class="botao">
+                <input type="button" value="4" onclick="botao(4)" class="botao">
+                <input type="button" value="5" onclick="botao(5)" class="botao">
+                <input type="button" value="6" onclick="botao(6)" class="botao">
+                <input type="button" value="7" onclick="botao(7)" class="botao">
+                <input type="button" value="8" onclick="botao(8)" class="botao">
+                <input type="button" value="9" onclick="botao(9)" class="botao">
+                <input type="button" value="=" onclick="resolução()" class="botao" id="igualdade">
+            </div>
+            <div class="op">
+                <input type="button" value="+" onclick="botao('+')" class="botao">
+                <input type="button" value="-" onclick="botao('-')" class="botao">
+                <input type="button" value="x" onclick="botao('*')" class="botao">
+                <input type="button" value="/" onclick="botao('/')" class="botao">
+            </div>
+        </div>
     </main>
-    <p id="problema"></p>
 
 
     <script>
@@ -40,14 +48,15 @@
         }
 
         function resolução(){
-            var problema = window.document.getElementById('problema')
         try {
             exp.value=eval(exp.value)
-            problema.innerText=''
         } catch (error) {
-            problema.innerText='-Tem algum erro na expressão-'
+            exp.value='-Tem algum erro na expressão-'
+        }
         }
 
+        function c_botao(){
+            exp.value =""
         }
     </script>
 </body>
