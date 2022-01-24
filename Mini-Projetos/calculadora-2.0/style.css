@@ -35,6 +35,7 @@ input#txtexp{
     color: rgba(0, 0, 0, 0.603);
     font-weight: bold;
     height: 35px;
+    font-size: 1.7em;
 }
 input.botao{
     font-weight: normal;
