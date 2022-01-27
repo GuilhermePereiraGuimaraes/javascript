@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Hora Dia</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: crimson;
+        }
+        h1{
+            text-align: center;
+            font-size: 2.5em;
+            color: white;
+        }
+        main{
+            margin: auto;
+            width: 500px;
+            height: 400px;
+            padding: 10px;
+            background-color:white;
+            box-shadow: 5px 5px 5px #00000049;
+            border-radius: 10px;
+            text-align: center;
+        }
+        p{
+            padding: 10px;
+            font-size: 1.3em;
+        }
+        img{
+            width: 60%;
+            height: 70%;
+            border-radius: 50%;
+        }
+        p#github{
+            text-align: center;
+        }
+        a{
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        a:active{
+            color: gray;
+        }
+    </style>
+</head>
+<body id="corpo">
+    <h1>Hora do Dia</h1>
+    <main>
+        <p id="texto_hora">Pagina padrão</p>
+        <img src="imagens/carro.jpg" alt="imagens">
+    </main>
+    <p id="github"><a href="https://github.com/GuilhermePereiraGuimaraes" target="_blank" rel="external">Guilherme Pereira</a></p>
+
+    <script>
+        var hora = new Date()
+        var agora = hora.getHours()
+        var texto = window.document.getElementById('texto_hora')
+        var corpo = window.document.getElementById('corpo')
+        var imagem = window.document.getElementsByTagName('img')[0]
+        if (agora>5 && agora<12) {
+            corpo.style.backgroundColor="#e0e07b"
+            imagem.src='imagens/dia.jpg'
+        } else if(agora>11 && agora<19){
+            corpo.style.backgroundColor="#ca7c45"
+            imagem.src='imagens/tarde.jpg'
+        }
+        else{
+            corpo.style.backgroundColor="#4e4e4e"
+            imagem.src='imagens/noite.jpg'
+        }
+        texto.innerHTML=`Agora são ${agora} horas`
+    </script>
+</body>
+</html>
