@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #3d81cfbb;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        main{
+            width: 500px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: white;
+            margin: auto;
+            font-size: 1.2em;
+            box-shadow: 5px 5px 5px #0000009a;
+        }
+        main>input{
+            font-size: 1.1em;
+            margin: 10px 0px;
+        }
+        div#imagem{
+            text-align: center;
+        }
+        img{
+            border-radius: 50%;
+            box-shadow: 2px 2px 2px #0000007e;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+    <main>
+        <p>Ano de Nascimento: <input type="number" name="ano" id="ano"></p>
+        <form>
+            Sexo:
+                <input type="radio" name="sexo" id="sexo-m" value="masculino" >
+                <label for="sexo-m">Masculino</label>
+                
+                <input type="radio" name="sexo" id="sexo-f" value="feminino">
+                <label for="sexo-f">Feminino</label>
+        </form>
+        <input type="button" value="Verificar" onclick="verificar()">
+        <div id="imagem">
+            <p id="res"></p>
+            <img>
+        </div>
+    </main>
+
+    <script>
+        function verificar() {
+            var data = new Date().getFullYear()
+            var ano = window.document.getElementById('ano')
+            var idade_valor= data - Number(ano.value)
+            var sexo_m= window.document.getElementsByName('sexo')[0]
+
+            var res = window.document.getElementById('res')
+            var imagem = window.document.getElementsByTagName('img')[0]
+            imagem.style.width='200px'
+            imagem.style.height='200px'
+
+            if (idade_valor==0 || idade_valor>0 && idade_valor<=3) {
+                if (sexo_m.checked==true) {
+                    res.innerHTML=`É um bêbê menino de ${idade_valor} anos`
+                    imagem.src='imagens/bebe-m.jpg'
+                } else {
+                    res.innerHTML=`É uma bêbê menina de ${idade_valor} anos`
+                    imagem.src='imagens/bebe-f.jpg'
+                }
+            }
+            else if (idade_valor>3 && idade_valor<=9) {
+                if (sexo_m.checked==true) {
+                    res.innerHTML=`É um garoto de ${idade_valor} anos`
+                    imagem.src='imagens/crianca-m.jpg'
+                } else {
+                    res.innerHTML=`É uma garota de ${idade_valor} anos`
+                    imagem.src='imagens/crianca-f.jpg'
+                }
+            }
+            else if (idade_valor>9 && idade_valor<=17) {
+                if (sexo_m.checked==true) {
+                    res.innerHTML=`É um jovem de ${idade_valor} anos`
+                    imagem.src='imagens/teen-m.jpg'
+                } else {
+                    res.innerHTML=`É uma jovem de ${idade_valor} anos`
+                    imagem.src='imagens/teen-f.jpg'
+                }
+            }
+            else if (idade_valor>17 && idade_valor<=59) {
+                if (sexo_m.checked==true) {
+                    res.innerHTML=`É um adulto de ${idade_valor} anos`
+                    imagem.src='imagens/adulto-m.jpg'
+                } else {
+                    res.innerHTML=`É uma adulta de ${idade_valor} anos`
+                    imagem.src='imagens/adulto-f.jpg'
+                }
+            } 
+            else if (idade_valor>59 && idade_valor<=120) {
+                if (sexo_m.checked==true) {
+                    res.innerHTML=`É um idoso de ${idade_valor} anos`
+                    imagem.src='imagens/idoso-m.jpg'
+                } else {
+                    res.innerHTML=`É uma idosa de ${idade_valor} anos`
+                    imagem.src='imagens/idoso-f.jpg'
+                }
+            }
+            else{
+                imagem.style.width='0px'
+                imagem.style.height='0px'
+                res.innerHTML=''
+                window.alert('Cheque os dados e tente de novo')
+            }
+        }
+    </script>
+</body>
+</html>
