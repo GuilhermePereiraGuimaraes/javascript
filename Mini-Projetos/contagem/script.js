@@ -10,7 +10,7 @@ function contar() {
     var v_passos= Number(passos.value)
     res.innerText=''
     
-    if (v_fim>v_inicio && v_passos>0) {
+    if (v_fim>v_inicio && v_passos>0 && inicio.value!='') {
         var p_res=document.createElement('p')
         res.appendChild(p_res)
         for (c = v_inicio; c < v_fim; c+=v_passos) {
