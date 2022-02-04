@@ -10,19 +10,28 @@ function contar() {
     var v_passos= Number(passos.value)
     res.innerText=''
     
-    if (v_fim>v_inicio && v_passos>=0 && inicio.value!='') {
-        var p_res=document.createElement('p')
-        res.appendChild(p_res)
+    if (inicio.value == '' || fim.value == '' || passos.value == '') {
+        res.innerHTML='<p>Impossível contar</p>'
+    } else {
         if (v_passos==0) {
             alert('Desconsiderando o passo 0 mudando para 1')
             v_passos=1
-        } 
-        for (c = v_inicio; c <= v_fim; c+=v_passos) {
-            p_res.innerHTML+=`${c}&#x1F449 `
         }
+        var p_res=document.createElement('p')
+        res.appendChild(p_res)
+        if (v_fim>v_inicio) {
+            //contagem crescente
+            for (c = v_inicio; c <= v_fim; c+=v_passos) {
+                p_res.innerHTML+=`${c}&#x1F449 `
+            }  
+
+        } else {
+            //contagem regressiva
+            for (c = v_inicio; c >= v_fim; c-=v_passos) {
+                p_res.innerHTML+=`${c}&#x1F449 `
+            }
+        } 
         p_res.innerHTML+='&#x1F3C6'
-    } else {
-        res.innerHTML='<p>Impossível contar</p>'
     }
    
 }
