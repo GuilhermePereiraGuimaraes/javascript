@@ -16,6 +16,12 @@ section{
     margin: auto;
     box-shadow: 5px 5px 10px #00000070;
 }
+p#p-2{
+    text-align: center;
+}
+select{
+    width: 150px;
+}
 footer{
     color: white;
     text-align: center;
