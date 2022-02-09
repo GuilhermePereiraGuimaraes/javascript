@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+body{
+    background-color: #7a9bd8;
+    font: normal 1.5em Arial, Helvetica, sans-serif;
+}
+header{
+    color: white;
+    text-align: center;
+}
+section{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 40%;
+    margin: auto;
+    box-shadow: 5px 5px 10px #00000070;
+}
+select#f_lista{
+    width: 150px;
+}
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
